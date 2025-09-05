@@ -11,14 +11,16 @@ echo "============================================================"
 echo "🚀 简单GitHub部署脚本"
 echo "============================================================"
 echo "🔑 GitHub账号: $GITHUB_USERNAME"
+echo "📅 执行时间: $(date)"
+echo "💻 系统信息: $(uname -a)"
+echo "📁 当前目录: $PWD"
+echo "🔧 Git版本: $(git --version)"
+echo "============================================================"
 echo ""
 
-# 获取用户输入
-read -p "📦 仓库名称: " REPO_NAME
-if [ -z "$REPO_NAME" ]; then
-    echo "❌ 仓库名称不能为空"
-    exit 1
-fi
+# 使用当前文件夹名作为仓库名
+REPO_NAME=$(basename "$PWD")
+echo "📦 自动使用当前文件夹名作为仓库名: $REPO_NAME"
 
 read -p "📄 仓库描述 (可选): " REPO_DESCRIPTION
 read -p "🔒 是否创建私有仓库? (y/N): " IS_PRIVATE
@@ -27,7 +29,8 @@ echo ""
 
 # 检查网络连接
 echo "🔍 检查网络连接..."
-if ping -c 1 github.com >/dev/null 2>&1; then
+echo "执行命令: ping -c 1 github.com"
+if ping -c 1 github.com; then
     echo "✅ 网络连接正常"
 else
     echo "❌ 无法连接到GitHub，请检查网络连接"
@@ -36,7 +39,10 @@ fi
 
 # 初始化Git仓库
 echo "📁 初始化本地Git仓库..."
+echo "检查当前目录: $PWD"
+echo "检查.git目录是否存在..."
 if [ ! -d ".git" ]; then
+    echo "执行命令: git init"
     git init
     echo "✅ Git仓库初始化成功"
 else
@@ -76,32 +82,48 @@ fi
 
 # 添加文件到Git
 echo "📝 添加文件到Git..."
+echo "执行命令: git add ."
 git add .
+echo "检查暂存区状态:"
+git status --porcelain
 echo "✅ 文件已添加到暂存区"
 
 # 创建提交
 echo "💾 创建提交..."
+echo "执行命令: git commit -m \"Initial commit: Auto-deployed project\""
 git commit -m "Initial commit: Auto-deployed project"
+echo "检查提交状态:"
+git log --oneline -1
 echo "✅ 初始提交创建成功"
 
 # 配置Git凭据
 echo "🔧 配置Git凭据..."
+echo "执行命令: git config --global credential.helper store"
 git config --global credential.helper store
+echo "创建凭据文件: ~/.git-credentials"
 echo "https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com" > ~/.git-credentials
+echo "检查凭据文件内容:"
+cat ~/.git-credentials
 echo "✅ Git凭据已配置"
 
 # 添加远程仓库
 echo "🔗 添加远程仓库..."
 REMOTE_URL="https://github.com/$GITHUB_USERNAME/$REPO_NAME.git"
+echo "远程仓库URL: $REMOTE_URL"
 
 # 检查是否已经有远程仓库
+echo "检查现有远程仓库..."
 if git remote get-url origin >/dev/null 2>&1; then
     echo "ℹ️  远程仓库已存在，更新URL"
+    echo "执行命令: git remote set-url origin \"$REMOTE_URL\""
     git remote set-url origin "$REMOTE_URL"
 else
+    echo "执行命令: git remote add origin \"$REMOTE_URL\""
     git remote add origin "$REMOTE_URL"
 fi
 
+echo "检查远程仓库配置:"
+git remote -v
 echo "✅ 远程仓库已设置"
 
 # 显示手动创建指导
@@ -129,8 +151,16 @@ echo ""
 
 # 设置环境变量
 export GIT_TERMINAL_PROMPT=0
+echo "设置环境变量: GIT_TERMINAL_PROMPT=0"
+
+# 检查当前分支
+echo "检查当前分支:"
+git branch
+echo "检查远程分支:"
+git branch -r
 
 # 推送代码
+echo "执行命令: git push -u origin main"
 if git push -u origin main; then
     echo "✅ 代码推送成功!"
     
@@ -156,6 +186,9 @@ if git push -u origin main; then
 else
     echo "❌ 推送失败"
     echo ""
+    echo "🔍 详细错误信息:"
+    echo "退出码: $?"
+    echo ""
     echo "🔧 常见问题排查:"
     echo "   1. 确认GitHub仓库已创建"
     echo "   2. 检查用户名和密码是否正确"
@@ -166,5 +199,12 @@ else
     echo "   1. 使用GitHub CLI: brew install gh"
     echo "   2. 使用Personal Access Token替代密码"
     echo "   3. 检查GitHub账户设置"
+    echo ""
+    echo "🔍 调试信息:"
+    echo "当前目录: $PWD"
+    echo "仓库名称: $REPO_NAME"
+    echo "远程URL: $REMOTE_URL"
+    echo "Git配置:"
+    git config --list | grep -E "(user|credential|remote)"
     exit 1
 fi
