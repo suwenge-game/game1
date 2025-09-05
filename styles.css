@@ -1,0 +1,257 @@
+/* Custom CSS for Wood Block Jam Website */
+
+/* Apple-style smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Apple-style shadows */
+.shadow-apple {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.shadow-apple-lg {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Apple-style button hover effects */
+.btn-apple {
+    transition: all 0.2s ease-in-out;
+    transform: translateY(0);
+}
+
+.btn-apple:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom gradient backgrounds */
+.gradient-apple-blue {
+    background: linear-gradient(135deg, #007AFF 0%, #5856D6 100%);
+}
+
+.gradient-apple-green {
+    background: linear-gradient(135deg, #34C759 0%, #30D158 100%);
+}
+
+/* Apple-style card hover effects */
+.card-apple {
+    transition: all 0.3s ease-in-out;
+    transform: translateY(0);
+}
+
+.card-apple:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Custom iframe styling */
+.game-iframe {
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.game-iframe:hover {
+    box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+/* Apple-style navigation */
+.nav-apple {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.8);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Custom typography */
+.text-apple {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Apple-style focus states */
+.focus-apple:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+    border-radius: 8px;
+}
+
+/* Custom animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Apple-style loading animation */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive iframe container */
+.iframe-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.iframe-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Apple-style section spacing */
+.section-apple {
+    padding: 4rem 0;
+}
+
+@media (max-width: 768px) {
+    .section-apple {
+        padding: 2rem 0;
+    }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* Apple-style form elements */
+.input-apple {
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out;
+    background: white;
+}
+
+.input-apple:focus {
+    outline: none;
+    border-color: #007AFF;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+/* Apple-style badge */
+.badge-apple {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-apple-blue {
+    background: rgba(0, 122, 255, 0.1);
+    color: #007AFF;
+}
+
+.badge-apple-green {
+    background: rgba(52, 199, 89, 0.1);
+    color: #34C759;
+}
+
+/* Apple-style divider */
+.divider-apple {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #e5e7eb, transparent);
+    margin: 2rem 0;
+}
+
+/* Custom media queries for better mobile experience */
+@media (max-width: 640px) {
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.125rem;
+        line-height: 1.5;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+}
+
+/* Apple-style glassmorphism effect */
+.glass-apple {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Custom hover effects for interactive elements */
+.hover-lift {
+    transition: transform 0.2s ease-in-out;
+}
+
+.hover-lift:hover {
+    transform: translateY(-2px);
+}
+
+/* Apple-style progress indicator */
+.progress-apple {
+    height: 4px;
+    background: #e5e7eb;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-apple-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #007AFF, #5856D6);
+    border-radius: 2px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Custom selection color */
+::selection {
+    background: rgba(0, 122, 255, 0.2);
+    color: #1f2937;
+}
+
+::-moz-selection {
+    background: rgba(0, 122, 255, 0.2);
+    color: #1f2937;
+}
