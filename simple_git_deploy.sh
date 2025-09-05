@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Git自动部署脚本 - 使用Git命令创建仓库
+# 简单GitHub部署脚本 - 处理网络问题
 # 作者: AI Assistant
 
 # 硬编码的GitHub账号信息
@@ -8,10 +8,9 @@ GITHUB_USERNAME="suwenge-game"
 GITHUB_PASSWORD="zhangzhilove0314"
 
 echo "============================================================"
-echo "🚀 Git自动部署脚本"
+echo "🚀 简单GitHub部署脚本"
 echo "============================================================"
 echo "🔑 GitHub账号: $GITHUB_USERNAME"
-echo "🔐 使用Git命令自动创建仓库"
 echo ""
 
 # 获取用户输入
@@ -25,6 +24,15 @@ read -p "📄 仓库描述 (可选): " REPO_DESCRIPTION
 read -p "🔒 是否创建私有仓库? (y/N): " IS_PRIVATE
 
 echo ""
+
+# 检查网络连接
+echo "🔍 检查网络连接..."
+if ping -c 1 github.com >/dev/null 2>&1; then
+    echo "✅ 网络连接正常"
+else
+    echo "❌ 无法连接到GitHub，请检查网络连接"
+    exit 1
+fi
 
 # 初始化Git仓库
 echo "📁 初始化本地Git仓库..."
@@ -50,7 +58,7 @@ $REPO_DESCRIPTION
 ## 部署信息
 
 - 部署时间: $(date '+%Y-%m-%d %H:%M:%S')
-- 部署脚本: git_auto_deploy.sh
+- 部署脚本: simple_git_deploy.sh
 - GitHub仓库: https://github.com/$GITHUB_USERNAME/$REPO_NAME
 
 ## 使用方法
@@ -79,8 +87,6 @@ echo "✅ 初始提交创建成功"
 # 配置Git凭据
 echo "🔧 配置Git凭据..."
 git config --global credential.helper store
-
-# 创建凭据文件
 echo "https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com" > ~/.git-credentials
 echo "✅ Git凭据已配置"
 
@@ -98,71 +104,36 @@ fi
 
 echo "✅ 远程仓库已设置"
 
-# 推送代码（尝试自动创建仓库）
+# 显示手动创建指导
+echo ""
+echo "🏗️  请先手动创建GitHub仓库:"
+echo "=================================================="
+echo "1. 访问: https://github.com/new"
+echo "2. 填写仓库信息:"
+echo "   - Repository name: $REPO_NAME"
+echo "   - Description: $REPO_DESCRIPTION"
+echo "   - Visibility: $([ "$IS_PRIVATE" = "y" ] || [ "$IS_PRIVATE" = "Y" ] && echo "Private" || echo "Public")"
+echo "3. 不要勾选任何选项"
+echo "4. 点击 'Create repository'"
+echo "=================================================="
+echo ""
+
+read -p "按回车键继续，确认您已经创建了仓库..."
+
+# 推送代码
 echo "⬆️  推送代码到GitHub..."
-echo "💡 如果仓库不存在，GitHub会自动创建"
+echo "💡 提示: 系统会要求您输入GitHub用户名和密码"
+echo "   用户名: $GITHUB_USERNAME"
+echo "   密码: $GITHUB_PASSWORD"
 echo ""
 
 # 设置环境变量
 export GIT_TERMINAL_PROMPT=0
 
 # 推送代码
-DEPLOY_SUCCESS=false
-
 if git push -u origin main; then
-    echo "✅ 代码推送成功，仓库已创建!"
-    DEPLOY_SUCCESS=true
-else
-    echo "❌ 推送失败，尝试替代方法..."
+    echo "✅ 代码推送成功!"
     
-    # 尝试使用GitHub CLI（如果可用）
-    if command -v gh >/dev/null 2>&1; then
-        echo "✅ 发现GitHub CLI，使用gh命令创建仓库"
-        
-        GH_CMD="gh repo create $REPO_NAME"
-        if [ -n "$REPO_DESCRIPTION" ]; then
-            GH_CMD="$GH_CMD --description \"$REPO_DESCRIPTION\""
-        fi
-        if [ "$IS_PRIVATE" = "y" ] || [ "$IS_PRIVATE" = "Y" ]; then
-            GH_CMD="$GH_CMD --private"
-        else
-            GH_CMD="$GH_CMD --public"
-        fi
-        GH_CMD="$GH_CMD --source=. --push"
-        
-        echo "🔧 执行命令: $GH_CMD"
-        if eval $GH_CMD; then
-            echo "✅ 使用GitHub CLI创建仓库成功!"
-            DEPLOY_SUCCESS=true
-        else
-            echo "❌ GitHub CLI创建失败"
-            show_manual_guide
-        fi
-    else
-        echo "ℹ️  GitHub CLI不可用"
-        show_manual_guide
-    fi
-fi
-
-# 显示手动创建指导
-show_manual_guide() {
-    echo ""
-    echo "🏗️  手动创建GitHub仓库:"
-    echo "=================================================="
-    echo "1. 访问: https://github.com/new"
-    echo "2. 填写仓库信息:"
-    echo "   - Repository name: $REPO_NAME"
-    echo "   - Description: $REPO_DESCRIPTION"
-    echo "   - Visibility: $([ "$IS_PRIVATE" = "y" ] || [ "$IS_PRIVATE" = "Y" ] && echo "Private" || echo "Public")"
-    echo "3. 不要勾选任何选项"
-    echo "4. 点击 'Create repository'"
-    echo "5. 然后运行以下命令推送代码:"
-    echo "   git push -u origin main"
-    echo "=================================================="
-}
-
-# 检查部署状态并显示相应信息
-if [ "$DEPLOY_SUCCESS" = true ]; then
     # 启用GitHub Pages指导
     echo ""
     echo "🌐 手动启用GitHub Pages:"
@@ -183,19 +154,17 @@ if [ "$DEPLOY_SUCCESS" = true ]; then
     echo "🌍 网站地址: https://$GITHUB_USERNAME.github.io/$REPO_NAME"
     echo "============================================================"
 else
-    # 部署失败
-    echo ""
-    echo "============================================================"
-    echo "❌ 部署失败!"
-    echo "============================================================"
-    echo "💡 请按照上述指导手动创建仓库，然后运行:"
-    echo "   git push -u origin main"
+    echo "❌ 推送失败"
     echo ""
     echo "🔧 常见问题排查:"
-    echo "   1. 检查网络连接"
-    echo "   2. 确认GitHub用户名和密码正确"
-    echo "   3. 检查仓库名称是否已存在"
-    echo "   4. 尝试使用GitHub CLI: brew install gh"
-    echo "============================================================"
+    echo "   1. 确认GitHub仓库已创建"
+    echo "   2. 检查用户名和密码是否正确"
+    echo "   3. 检查网络连接"
+    echo "   4. 尝试手动推送: git push -u origin main"
+    echo ""
+    echo "💡 如果问题持续，请尝试:"
+    echo "   1. 使用GitHub CLI: brew install gh"
+    echo "   2. 使用Personal Access Token替代密码"
+    echo "   3. 检查GitHub账户设置"
     exit 1
 fi

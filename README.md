@@ -1,61 +1,23 @@
-# Wood Block Jam - Game Website
+# game2
 
-A modern, responsive website for the Wood Block Jam puzzle game, built with HTML, CSS, and Tailwind CSS.
 
-## Features
 
-- 🎮 **Interactive Game**: Embedded Wood Block Jam game from OnlineGames.io
-- 📱 **Responsive Design**: Optimized for PC, tablet, and mobile devices
-- 🍎 **Apple-style UI**: Clean, modern design with Apple's design language
-- 🔍 **SEO Optimized**: Complete meta tags, structured data, and canonical URLs
-- ⚡ **Fast Loading**: Optimized performance with minimal dependencies
+## 项目描述
 
-## Game Description
+这是一个通过自动化脚本部署到GitHub的项目。
 
-Wood Block Jam is an addictive puzzle game where you guide colorful blocks through challenging wooden grids to their matching exits. Each block only moves in the direction it's pointing, requiring strategic thinking and careful planning.
+## 部署信息
 
-## Technologies Used
+- 部署时间: 2025-09-06 01:21:21
+- 部署脚本: simple_git_deploy.sh
+- GitHub仓库: https://github.com/suwenge-game/game2
 
-- **HTML5**: Semantic markup with proper structure
-- **Tailwind CSS**: Utility-first CSS framework for responsive design
-- **Custom CSS**: Apple-style animations and effects
-- **JavaScript**: Smooth scrolling and interactive elements
+## 使用方法
 
-## SEO Features
+1. 克隆仓库
+2. 打开项目文件
+3. 开始使用
 
-- Canonical URL: `https://deskgame.xyz/`
-- Open Graph meta tags for social media sharing
-- Twitter Card support
-- Structured data (JSON-LD) for search engines
-- Optimized meta descriptions and keywords
+## 许可证
 
-## File Structure
-
-```
-├── index.html          # Main HTML file
-├── styles.css          # Custom CSS styles
-└── README.md           # This file
-```
-
-## Getting Started
-
-1. Clone this repository
-2. Open `index.html` in your web browser
-3. The game will load automatically from OnlineGames.io
-
-## Browser Support
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## License
-
-This project is for educational and demonstration purposes. The Wood Block Jam game is developed by Momo Games and hosted on OnlineGames.io.
-
-## Contact
-
-Website: [DeskGame.xyz](https://deskgame.xyz/)
-Game Source: [OnlineGames.io](https://www.onlinegames.io/wood-block-jam/)
+请根据项目需要添加适当的许可证信息。
