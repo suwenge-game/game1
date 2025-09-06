@@ -73,17 +73,24 @@ else
 fi
 
 print_step "4. 创建GitHub远程仓库..."
-# 使用GitHub CLI创建仓库
-gh repo create "$REPO_NAME" --public --description "Auto-deployed project: $REPO_NAME" --source=. --remote=origin --push
-
-if [ $? -eq 0 ]; then
-    print_message "仓库创建成功: https://github.com/$GITHUB_USERNAME/$REPO_NAME"
+# 检查远程源是否已存在
+if git remote get-url origin &> /dev/null; then
+    print_message "远程源已存在，跳过创建步骤"
+    REPO_URL=$(git remote get-url origin)
+    print_message "当前远程源: $REPO_URL"
 else
-    print_warning "仓库可能已存在，尝试添加远程源..."
-    # 如果仓库已存在，添加远程源并推送
-    git remote add origin "https://github.com/$GITHUB_USERNAME/$REPO_NAME.git" 2>/dev/null || true
-    git branch -M main
-    git push -u origin main
+    # 使用GitHub CLI创建仓库
+    gh repo create "$REPO_NAME" --public --description "Auto-deployed project: $REPO_NAME" --source=. --remote=origin --push
+    
+    if [ $? -eq 0 ]; then
+        print_message "仓库创建成功: https://github.com/$GITHUB_USERNAME/$REPO_NAME"
+    else
+        print_warning "仓库可能已存在，尝试添加远程源..."
+        # 如果仓库已存在，添加远程源并推送
+        git remote add origin "https://github.com/$GITHUB_USERNAME/$REPO_NAME.git" 2>/dev/null || true
+        git branch -M main
+        git push -u origin main
+    fi
 fi
 
 print_step "5. 推送代码到GitHub..."
