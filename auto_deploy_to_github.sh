@@ -108,8 +108,12 @@ read -p "是否启用GitHub Pages? (y/n): " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     print_step "启用GitHub Pages..."
-    gh api repos/$GITHUB_USERNAME/$REPO_NAME/pages -X POST -f source[branch]=main -f source[path]=/
-    print_message "GitHub Pages已启用，网站将在几分钟内可用"
+    # 使用正确的API路径启用GitHub Pages
+    gh api repos/$GITHUB_USERNAME/$REPO_NAME/pages -X POST -f source[branch]=main -f source[path]=/ || {
+        print_warning "GitHub Pages启用失败，请手动在GitHub仓库设置中启用"
+        print_message "访问: https://github.com/$GITHUB_USERNAME/$REPO_NAME/settings/pages"
+    }
+    print_message "GitHub Pages配置完成，网站将在几分钟内可用"
 fi
 
 print_message "脚本执行完成！"
