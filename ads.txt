@@ -1,0 +1,8 @@
+# ads.txt file for deskgame.xyz
+# This file helps prevent unauthorized inventory sales
+
+# Google AdSense
+google.com, pub-9132117639313977, DIRECT, f08c47fec0942fa0
+
+# Additional authorized sellers (if any)
+# Add other authorized sellers here as needed
