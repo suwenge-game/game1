@@ -112,12 +112,53 @@
             <div id="regularContent">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Latest Content</h2>
                 <div id="contentList" class="space-y-8">
-                    <!-- 内容列表将在这里显示 -->
+                    <!-- Hardcoded Content -->
+                    <div class="content-card featured" data-category="Tips & Tricks">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="category-badge category-Tips\ \&\ Tricks">Tips & Tricks</span>
+                                <span class="text-sm text-gray-500">September 16, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Wood Block Jam - The Real Talk: Why This Puzzle Game Will Either Make You a Genius or Drive You Insane</h3>
+                            <p class="text-gray-600 mb-4">The brutal truth about this addictive puzzle game that will either make you a genius or drive you insane. A complete guide from a veteran player.</p>
+                            <button onclick="showGameIntro()" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read More →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="content-card" data-category="Game Updates">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="category-badge category-Game\ Updates">Game Updates</span>
+                                <span class="text-sm text-gray-500">September 15, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Welcome to DeskGame.xyz - Your New Gaming Destination</h3>
+                            <p class="text-gray-600 mb-4">We're excited to announce the launch of our new gaming platform featuring Wood Block Jam and more exciting puzzle games.</p>
+                            <button onclick="showWelcomeContent()" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read More →
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="content-card" data-category="Events">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="category-badge category-Events">Events</span>
+                                <span class="text-sm text-gray-500">September 14, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">Daily Challenge: Master the Wood Block Jam</h3>
+                            <p class="text-gray-600 mb-4">Join our daily challenges and compete with players worldwide. New levels added every week!</p>
+                            <button onclick="showEventContent()" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read More →
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
             <!-- Empty State -->
-            <div id="emptyState" class="text-center py-16 hidden">
+            <div id="emptyState" class="text-center py-16 hidden" style="display: none !important;">
                 <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
@@ -391,6 +432,149 @@
 
         // 初始化内容展示系统
         const contentDisplay = new ContentDisplay();
+
+        // Hardcoded content functions
+        function showGameIntro() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="category-badge category-Tips\ \&\ Tricks mb-2 inline-block">Tips & Tricks</span>
+                                <h2 class="text-2xl font-bold text-gray-900">Wood Block Jam - The Real Talk: Why This Puzzle Game Will Either Make You a Genius or Drive You Insane</h2>
+                                <p class="text-gray-500 mt-2">September 16, 2025</p>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="prose max-w-none">
+                            <p>Yo, so you're thinking about diving into Wood Block Jam? Let me tell you straight up - this ain't your grandma's puzzle game. I've been grinding this thing since it dropped, and honestly? It's got that "just one more level" crack that'll have you up at 3 AM wondering where your life went.</p>
+                            
+                            <p>First off, don't let the cute wooden aesthetic fool you. This game is brutal. Like, "I thought I was smart until I hit level 47" brutal. The blocks look innocent enough, but they've got minds of their own. Each one only moves in the direction it's pointing, which sounds simple until you're staring at a grid that looks like a toddler's crayon drawing gone wrong.</p>
+                            
+                            <p>Here's the thing that gets people hooked - and frustrated: the game doesn't hold your hand. No tutorials holding your hand through the basics. You're thrown into the deep end, and either you swim or you rage quit. Most people rage quit around level 15, but if you stick it out? That's when the magic happens.</p>
+                            
+                            <p>Let me drop some real knowledge on you. The "secret" that most players miss? It's not about moving blocks fast - it's about thinking three moves ahead. I've seen too many newbies panic and start clicking everything, then wonder why they're stuck. Slow down, plan your route, and for the love of all that's holy, don't just randomly drag blocks around.</p>
+                            
+                            <p>The real pro tip? Some of these levels have hidden shortcuts that the devs definitely didn't intend. Like, there's this one level where if you move the red block first instead of the blue one, you can skip like half the puzzle. Don't ask me how I found that out - let's just say I had a lot of time on my hands during that one particularly boring Zoom meeting.</p>
+                            
+                            <p>Now, here's where it gets interesting. The community is split between two camps: the "git gud" purists who think every level should be a nightmare, and the casual players who just want to chill and solve puzzles. The devs are walking a tightrope trying to please both sides, and honestly? They're doing a decent job.</p>
+                            
+                            <p>But here's my hot take: the difficulty curve is all over the place. You'll breeze through levels 1-20, then hit a brick wall at 21 that makes you question your life choices. Then suddenly you're back to easy mode until level 35, where the game decides to become Dark Souls with blocks. It's inconsistent, but somehow it works.</p>
+                            
+                            <p>Look, I'm not gonna sugarcoat this. Wood Block Jam isn't for everyone. If you're looking for mindless entertainment, go play Candy Crush. This game demands your attention, your patience, and occasionally your sanity. But if you're the type who gets a rush from finally cracking that impossible puzzle after three hours of trial and error? Welcome to your new addiction.</p>
+                            
+                            <p>The best part? It's completely free, no pay-to-win nonsense, no ads that interrupt your flow. Just pure, unfiltered puzzle-solving goodness. And trust me, once you get the hang of it, you'll be that person recommending it to everyone you know, even though half of them will hate you for it.</p>
+                            
+                            <p>So yeah, give it a shot. Just don't blame me when you're still playing at 2 AM, muttering "just one more level" to yourself. I warned you.</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        function showWelcomeContent() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="category-badge category-Game\ Updates mb-2 inline-block">Game Updates</span>
+                                <h2 class="text-2xl font-bold text-gray-900">Welcome to DeskGame.xyz - Your New Gaming Destination</h2>
+                                <p class="text-gray-500 mt-2">September 15, 2025</p>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="prose max-w-none">
+                            <p>We're excited to announce the launch of DeskGame.xyz, your new destination for free online puzzle games!</p>
+                            
+                            <p>Our platform features Wood Block Jam, an addictive puzzle game that challenges your strategic thinking and problem-solving skills. With hundreds of levels and a vibrant community, there's always something new to discover.</p>
+                            
+                            <p>What makes us different:</p>
+                            <ul>
+                                <li>Completely free to play</li>
+                                <li>No downloads required</li>
+                                <li>Works on all devices</li>
+                                <li>Regular content updates</li>
+                                <li>Community-driven features</li>
+                            </ul>
+                            
+                            <p>Join thousands of players who have already discovered the joy of Wood Block Jam. Whether you're a casual gamer looking for a quick brain teaser or a puzzle enthusiast seeking the ultimate challenge, we've got something for everyone.</p>
+                            
+                            <p>Stay tuned for more exciting games and features coming soon!</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
+        function showEventContent() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="category-badge category-Events mb-2 inline-block">Events</span>
+                                <h2 class="text-2xl font-bold text-gray-900">Daily Challenge: Master the Wood Block Jam</h2>
+                                <p class="text-gray-500 mt-2">September 14, 2025</p>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="prose max-w-none">
+                            <p>Join our daily challenges and compete with players worldwide! Every day brings new opportunities to test your skills and climb the leaderboards.</p>
+                            
+                            <p>This week's challenges:</p>
+                            <ul>
+                                <li><strong>Monday:</strong> Speed Run - Complete 10 levels in under 5 minutes</li>
+                                <li><strong>Tuesday:</strong> Perfect Score - Get 3-star ratings on 5 consecutive levels</li>
+                                <li><strong>Wednesday:</strong> Marathon - Complete 25 levels without hints</li>
+                                <li><strong>Thursday:</strong> Master Class - Solve the weekly featured puzzle</li>
+                                <li><strong>Friday:</strong> Community Choice - Vote for next week's challenge</li>
+                            </ul>
+                            
+                            <p>New levels are added every week, keeping the experience fresh and exciting. Whether you're a beginner or a seasoned player, there's always a new challenge waiting for you.</p>
+                            
+                            <p>Don't miss out on the fun - start your daily challenge today!</p>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
     </script>
 </body>
 </html>
