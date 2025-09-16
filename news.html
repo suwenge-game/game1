@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest News - DeskGame.xyz</title>
+    <meta name="description" content="DeskGame.xyz latest game updates, events, and tips">
+    <meta name="keywords" content="game updates,events,tips,Wood Block Jam,DeskGame">
+    <meta name="author" content="DeskGame.xyz">
+    <link rel="canonical" href="https://deskgame.xyz/news.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Latest News - DeskGame.xyz">
+    <meta property="og:description" content="Check out DeskGame.xyz latest game updates, events, and tips">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://deskgame.xyz/news.html">
+    <meta property="og:site_name" content="DeskGame.xyz">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Latest News - DeskGame.xyz">
+    <meta name="twitter:description" content="Check out DeskGame.xyz latest game updates, events, and tips">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K11J4PCW59"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K11J4PCW59');
+    </script>
+    
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9132117639313977"
+         crossorigin="anonymous"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-semibold text-gray-900 hover:text-blue-600">DeskGame.xyz</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="index.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="news.html" class="text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Latest News</a>
+                        <a href="admin.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Admin Panel</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Latest News
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Stay updated with DeskGame.xyz latest game updates, events, and tips
+            </p>
+        </div>
+    </section>
+
+    <!-- Filter Section -->
+    <section class="py-8 bg-white border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-4">
+                <button class="filter-btn active" data-category="all">
+                    All
+                </button>
+                <button class="filter-btn" data-category="Game Updates">
+                    Game Updates
+                </button>
+                <button class="filter-btn" data-category="Events">
+                    Events
+                </button>
+                <button class="filter-btn" data-category="Tips & Tricks">
+                    Tips & Tricks
+                </button>
+                <button class="filter-btn" data-category="Community">
+                    Community
+                </button>
+                <button class="filter-btn" data-category="Other">
+                    Other
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Featured Content -->
+            <div id="featuredContent" class="mb-12">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Featured Content</h2>
+                <div id="featuredList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- 精选内容将在这里显示 -->
+                </div>
+            </div>
+
+            <!-- Regular Content -->
+            <div id="regularContent">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Latest Content</h2>
+                <div id="contentList" class="space-y-8">
+                    <!-- 内容列表将在这里显示 -->
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div id="emptyState" class="text-center py-16 hidden">
+                <div class="w-24 h-24 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-2">No Content Yet</h3>
+                <p class="text-gray-500 mb-6">No content has been published yet. Please check back later.</p>
+                <a href="index.html" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200">
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">DeskGame.xyz</h3>
+                    <p class="text-gray-400">
+                        Your destination for free online puzzle games. Play Wood Block Jam and discover more exciting brain-teasing adventures.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="news.html" class="hover:text-white transition-colors">Latest News</a></li>
+                        <li><a href="admin.html" class="hover:text-white transition-colors">Admin Panel</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Game Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Free to Play</li>
+                        <li>No Download Required</li>
+                        <li>Works on All Devices</li>
+                        <li>Hundreds of Levels</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 DeskGame.xyz. All rights reserved. Wood Block Jam is developed by Momo Games.</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .filter-btn {
+            @apply px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200;
+            @apply bg-gray-100 text-gray-700 hover:bg-gray-200;
+        }
+        
+        .filter-btn.active {
+            @apply bg-blue-600 text-white hover:bg-blue-700;
+        }
+        
+        .content-card {
+            @apply bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300;
+        }
+        
+        .content-card.featured {
+            @apply ring-2 ring-blue-500 ring-opacity-50;
+        }
+        
+        .category-badge {
+            @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+        }
+        
+        .category-Game\ Updates { @apply bg-blue-100 text-blue-800; }
+        .category-Events { @apply bg-green-100 text-green-800; }
+        .category-Tips\ \&\ Tricks { @apply bg-yellow-100 text-yellow-800; }
+        .category-Community { @apply bg-purple-100 text-purple-800; }
+        .category-Other { @apply bg-gray-100 text-gray-800; }
+    </style>
+
+    <script>
+        // 内容展示系统
+        class ContentDisplay {
+            constructor() {
+                this.storageKey = 'deskgame_content';
+                this.currentFilter = 'all';
+                this.init();
+            }
+
+            init() {
+                this.bindEvents();
+                this.loadContent();
+            }
+
+            bindEvents() {
+                // 筛选按钮事件
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        this.setActiveFilter(e.target.dataset.category);
+                        this.filterContent(e.target.dataset.category);
+                    });
+                });
+            }
+
+            setActiveFilter(category) {
+                document.querySelectorAll('.filter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                document.querySelector(`[data-category="${category}"]`).classList.add('active');
+                this.currentFilter = category;
+            }
+
+            loadContent() {
+                const contents = this.getAllContent();
+                const publishedContents = contents.filter(content => content.published);
+                
+                if (publishedContents.length === 0) {
+                    this.showEmptyState();
+                    return;
+                }
+
+                this.hideEmptyState();
+                this.displayContent(publishedContents);
+            }
+
+            getAllContent() {
+                const stored = localStorage.getItem(this.storageKey);
+                return stored ? JSON.parse(stored) : [];
+            }
+
+            displayContent(contents) {
+                // 按发布时间排序（最新的在前）
+                contents.sort((a, b) => new Date(b.publishDate) - new Date(a.publishDate));
+
+                // 分离精选内容和普通内容
+                const featuredContents = contents.filter(content => content.featured);
+                const regularContents = contents.filter(content => !content.featured);
+
+                this.displayFeaturedContent(featuredContents);
+                this.displayRegularContent(regularContents);
+            }
+
+            displayFeaturedContent(contents) {
+                const featuredList = document.getElementById('featuredList');
+                const featuredSection = document.getElementById('featuredContent');
+
+                if (contents.length === 0) {
+                    featuredSection.style.display = 'none';
+                    return;
+                }
+
+                featuredSection.style.display = 'block';
+                featuredList.innerHTML = contents.slice(0, 3).map(content => this.createContentCard(content, true)).join('');
+            }
+
+            displayRegularContent(contents) {
+                const contentList = document.getElementById('contentList');
+                contentList.innerHTML = contents.map(content => this.createContentCard(content, false)).join('');
+            }
+
+            createContentCard(content, isFeatured) {
+                const publishDate = new Date(content.publishDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+
+                return `
+                    <div class="content-card ${isFeatured ? 'featured' : ''}" data-category="${content.category}">
+                        ${content.imageUrl ? `
+                            <div class="aspect-video bg-gray-200">
+                                <img src="${content.imageUrl}" alt="${content.title}" 
+                                     class="w-full h-full object-cover"
+                                     onerror="this.style.display='none'">
+                            </div>
+                        ` : ''}
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="category-badge category-${content.category}">${content.category}</span>
+                                <span class="text-sm text-gray-500">${publishDate}</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">${content.title}</h3>
+                            <p class="text-gray-600 mb-4">${content.summary}</p>
+                            <button onclick="contentDisplay.showContentDetail('${content.id}')" 
+                                    class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read More →
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }
+
+            filterContent(category) {
+                const cards = document.querySelectorAll('.content-card');
+                
+                cards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // 检查是否有可见内容
+                const visibleCards = Array.from(cards).filter(card => card.style.display !== 'none');
+                if (visibleCards.length === 0) {
+                    this.showEmptyState();
+                } else {
+                    this.hideEmptyState();
+                }
+            }
+
+            showContentDetail(contentId) {
+                const contents = this.getAllContent();
+                const content = contents.find(c => c.id === contentId);
+                
+                if (content) {
+                    // 创建模态框显示完整内容
+                    const modal = document.createElement('div');
+                    modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+                    modal.innerHTML = `
+                        <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                            <div class="p-6 border-b border-gray-200">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <span class="category-badge category-${content.category} mb-2 inline-block">${content.category}</span>
+                                        <h2 class="text-2xl font-bold text-gray-900">${content.title}</h2>
+                                        <p class="text-gray-500 mt-2">${new Date(content.publishDate).toLocaleString('en-US')}</p>
+                                    </div>
+                                    <button onclick="this.closest('.fixed').remove()" 
+                                            class="text-gray-400 hover:text-gray-600 text-2xl">
+                                        ×
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                ${content.imageUrl ? `
+                                    <div class="mb-6">
+                                        <img src="${content.imageUrl}" alt="${content.title}" 
+                                             class="w-full h-64 object-cover rounded-lg"
+                                             onerror="this.style.display='none'">
+                                    </div>
+                                ` : ''}
+                                <div class="prose max-w-none">
+                                    ${content.content.replace(/\n/g, '<br>')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    document.body.appendChild(modal);
+                    
+                    // 点击背景关闭模态框
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            modal.remove();
+                        }
+                    });
+                }
+            }
+
+            showEmptyState() {
+                document.getElementById('emptyState').classList.remove('hidden');
+                document.getElementById('featuredContent').style.display = 'none';
+                document.getElementById('regularContent').style.display = 'none';
+            }
+
+            hideEmptyState() {
+                document.getElementById('emptyState').classList.add('hidden');
+                document.getElementById('featuredContent').style.display = 'block';
+                document.getElementById('regularContent').style.display = 'block';
+            }
+        }
+
+        // 初始化内容展示系统
+        const contentDisplay = new ContentDisplay();
+    </script>
+</body>
+</html>
