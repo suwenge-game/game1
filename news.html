@@ -269,16 +269,15 @@
             }
 
             loadContent() {
-                const contents = this.getAllContent();
-                const publishedContents = contents.filter(content => content.published);
-                
-                if (publishedContents.length === 0) {
-                    this.showEmptyState();
-                    return;
-                }
-
+                // Since we have hardcoded content, we don't need to load from localStorage
+                // Just ensure the hardcoded content is visible
                 this.hideEmptyState();
-                this.displayContent(publishedContents);
+                
+                // Show all hardcoded content by default
+                const cards = document.querySelectorAll('.content-card');
+                cards.forEach(card => {
+                    card.style.display = 'block';
+                });
             }
 
             getAllContent() {
@@ -432,6 +431,21 @@
 
         // 初始化内容展示系统
         const contentDisplay = new ContentDisplay();
+        
+        // 确保页面加载完成后显示内容
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Page loaded, showing hardcoded content');
+            // 确保所有硬编码内容都可见
+            const cards = document.querySelectorAll('.content-card');
+            cards.forEach(card => {
+                card.style.display = 'block';
+            });
+            // 隐藏空状态
+            const emptyState = document.getElementById('emptyState');
+            if (emptyState) {
+                emptyState.style.display = 'none';
+            }
+        });
 
         // Hardcoded content functions
         function showGameIntro() {
