@@ -12,9 +12,29 @@
 # Allow Google AdSense crawlers to access ads.txt
 User-agent: Googlebot
 Allow: /ads.txt
+Allow: /
 
 User-agent: Mediapartners-Google
 Allow: /ads.txt
+
+# Allow other search engines
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Sitemap
+Sitemap: https://deskgame.xyz/sitemap.xml
 
 # BEGIN Cloudflare Managed content
 
