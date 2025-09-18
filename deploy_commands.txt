@@ -1,0 +1,27 @@
+# 快速部署命令 - 复制粘贴使用
+
+# 方法1: 一行命令部署
+git add . && git commit -m "你的提交信息" && git push origin main
+
+# 方法2: 分步执行
+git add .
+git commit -m "你的提交信息"
+git push origin main
+
+# 方法3: 使用快速部署脚本
+./quick_deploy.sh "你的提交信息"
+
+# 方法4: 网络问题时的完整命令
+git add . && git commit -m "你的提交信息" && git config --global http.postBuffer 524288000 && git config --global http.lowSpeedLimit 0 && git config --global http.lowSpeedTime 999999 && git push origin main
+
+# 常用提交信息模板:
+# "修复SEO问题"
+# "更新页面内容"
+# "优化用户体验"
+# "添加新功能"
+# "修复bug"
+# "更新文档"
+
+# 验证部署成功:
+git status
+git log --oneline -3
