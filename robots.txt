@@ -33,6 +33,9 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+# Disallow admin pages
+Disallow: /admin.html
+
 # Sitemap
 Sitemap: https://deskgame.xyz/sitemap.xml
 

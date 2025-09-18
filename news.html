@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latest News - DeskGame.xyz</title>
-    <meta name="description" content="DeskGame.xyz latest game updates, events, and tips">
-    <meta name="keywords" content="game updates,events,tips,Wood Block Jam,DeskGame">
+    <title>最新游戏攻略和资讯 - DeskGame.xyz | 皇室战争攻略、Wood Block Jam技巧</title>
+    <meta name="description" content="DeskGame.xyz最新游戏更新、事件和攻略。包含皇室战争卡牌攻略、Wood Block Jam技巧等游戏指南">
+    <meta name="keywords" content="game updates,events,tips,Wood Block Jam,DeskGame,皇室战争,clash royale,卡牌攻略,游戏攻略,royaledle,royaldle">
     <meta name="author" content="DeskGame.xyz">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://deskgame.xyz/news.html">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Latest News - DeskGame.xyz">
-    <meta property="og:description" content="Check out DeskGame.xyz latest game updates, events, and tips">
+    <meta property="og:description" content="查看DeskGame.xyz最新游戏更新、事件和攻略。包含皇室战争卡牌攻略、Wood Block Jam技巧等游戏指南">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://deskgame.xyz/news.html">
     <meta property="og:site_name" content="DeskGame.xyz">
@@ -19,13 +20,49 @@
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Latest News - DeskGame.xyz">
-    <meta name="twitter:description" content="Check out DeskGame.xyz latest game updates, events, and tips">
+    <meta name="twitter:description" content="查看DeskGame.xyz最新游戏更新、事件和攻略。包含皇室战争卡牌攻略、Wood Block Jam技巧等游戏指南">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "最新游戏攻略和资讯 - DeskGame.xyz",
+        "description": "DeskGame.xyz最新游戏更新、事件和攻略。包含皇室战争卡牌攻略、Wood Block Jam技巧等游戏指南",
+        "url": "https://deskgame.xyz/news.html",
+        "isPartOf": {
+            "@type": "WebSite",
+            "name": "DeskGame.xyz",
+            "url": "https://deskgame.xyz/"
+        },
+        "datePublished": "2025-09-17",
+        "dateModified": "2025-09-17",
+        "inLanguage": "zh-CN",
+        "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://deskgame.xyz/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "News",
+                    "item": "https://deskgame.xyz/news.html"
+                }
+            ]
+        }
+    }
+    </script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-K11J4PCW59"></script>
@@ -73,10 +110,10 @@
     <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Latest News
+                最新游戏攻略
             </h1>
             <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Stay updated with DeskGame.xyz latest game updates, events, and tips
+                获取DeskGame.xyz最新游戏更新、事件和攻略，包含皇室战争卡牌攻略等专业游戏指南
             </p>
         </div>
     </section>
@@ -86,22 +123,22 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center gap-4">
                 <button class="filter-btn active" data-category="all">
-                    All
+                    全部
                 </button>
                 <button class="filter-btn" data-category="Game Updates">
-                    Game Updates
+                    游戏更新
                 </button>
                 <button class="filter-btn" data-category="Events">
-                    Events
+                    活动
                 </button>
                 <button class="filter-btn" data-category="Tips & Tricks">
-                    Tips & Tricks
+                    攻略技巧
                 </button>
                 <button class="filter-btn" data-category="Community">
-                    Community
+                    社区
                 </button>
                 <button class="filter-btn" data-category="Other">
-                    Other
+                    其他
                 </button>
             </div>
         </div>
@@ -112,7 +149,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Featured Content -->
             <div id="featuredContent" class="mb-12">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Featured Content</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">精选内容</h2>
                 <div id="featuredList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- 精选内容将在这里显示 -->
                 </div>
@@ -120,13 +157,13 @@
 
             <!-- Regular Content -->
             <div id="regularContent">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6">Latest Content</h2>
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">最新内容</h2>
                 <div id="contentList" class="space-y-8">
                     <!-- Hardcoded Content -->
                     <div class="content-card featured" data-category="Tips & Tricks">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="category-badge category-Tips\ \&\ Tricks">Tips & Tricks</span>
+                                <span class="category-badge category-Tips\ \&\ Tricks">攻略技巧</span>
                                 <span class="text-sm text-gray-500">September 16, 2025</span>
                             </div>
                             <h3 class="text-xl font-semibold text-gray-900 mb-3">Wood Block Jam - The Real Talk: Why This Puzzle Game Will Either Make You a Genius or Drive You Insane</h3>
@@ -140,7 +177,7 @@
                     <div class="content-card" data-category="Game Updates">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="category-badge category-Game\ Updates">Game Updates</span>
+                                <span class="category-badge category-Game\ Updates">游戏更新</span>
                                 <span class="text-sm text-gray-500">September 15, 2025</span>
                             </div>
                             <h3 class="text-xl font-semibold text-gray-900 mb-3">Welcome to DeskGame.xyz - Your New Gaming Destination</h3>
@@ -151,10 +188,24 @@
                         </div>
                     </div>
 
+                    <div class="content-card featured" data-category="Tips & Tricks">
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="category-badge category-Tips\ \&\ Tricks">攻略技巧</span>
+                                <span class="text-sm text-gray-500">September 17, 2025</span>
+                            </div>
+                            <h3 class="text-xl font-semibold text-gray-900 mb-3">皇室战争卡牌攻略：从新手到高手的完整指南</h3>
+                            <p class="text-gray-600 mb-4">掌握皇室战争的核心策略，学会卡牌搭配和时机把握，成为竞技场上的王者！</p>
+                            <button onclick="showRoyaleGuide()" class="text-blue-600 hover:text-blue-800 font-medium">
+                                Read More →
+                            </button>
+                        </div>
+                    </div>
+
                     <div class="content-card" data-category="Events">
                         <div class="p-6">
                             <div class="flex items-center justify-between mb-3">
-                                <span class="category-badge category-Events">Events</span>
+                                <span class="category-badge category-Events">活动</span>
                                 <span class="text-sm text-gray-500">September 14, 2025</span>
                             </div>
                             <h3 class="text-xl font-semibold text-gray-900 mb-3">Daily Challenge: Master the Wood Block Jam</h3>
@@ -466,7 +517,7 @@
                     <div class="p-6 border-b border-gray-200">
                         <div class="flex justify-between items-start">
                             <div>
-                                <span class="category-badge category-Tips\ \&\ Tricks mb-2 inline-block">Tips & Tricks</span>
+                                <span class="category-badge category-Tips\ \&\ Tricks mb-2 inline-block">攻略技巧</span>
                                 <h2 class="text-2xl font-bold text-gray-900">Wood Block Jam - The Real Talk: Why This Puzzle Game Will Either Make You a Genius or Drive You Insane</h2>
                                 <p class="text-gray-500 mt-2">September 16, 2025</p>
                             </div>
@@ -516,7 +567,7 @@
                     <div class="p-6 border-b border-gray-200">
                         <div class="flex justify-between items-start">
                             <div>
-                                <span class="category-badge category-Game\ Updates mb-2 inline-block">Game Updates</span>
+                                <span class="category-badge category-Game\ Updates mb-2 inline-block">游戏更新</span>
                                 <h2 class="text-2xl font-bold text-gray-900">Welcome to DeskGame.xyz - Your New Gaming Destination</h2>
                                 <p class="text-gray-500 mt-2">September 15, 2025</p>
                             </div>
@@ -555,6 +606,84 @@
             });
         }
 
+        function showRoyaleGuide() {
+            const modal = document.createElement('div');
+            modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+                    <div class="p-6 border-b border-gray-200">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="category-badge category-Tips\ \&\ Tricks mb-2 inline-block">攻略技巧</span>
+                                <h2 class="text-2xl font-bold text-gray-900">皇室战争卡牌攻略：从新手到高手的完整指南</h2>
+                                <p class="text-gray-500 mt-2">September 17, 2025</p>
+                            </div>
+                            <button onclick="this.closest('.fixed').remove()" class="text-gray-400 hover:text-gray-600 text-2xl">×</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="prose max-w-none">
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">🎯 皇室战争核心策略指南</h3>
+                            
+                            <p>皇室战争是一款需要策略思维和时机把握的卡牌竞技游戏。无论你是刚入门的新手还是想要提升段位的老玩家，这份攻略都能帮助你更好地理解游戏机制。</p>
+                            
+                            <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">🏰 基础卡牌搭配原则</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>坦克+输出组合：</strong>巨人、石头人等坦克单位配合弓箭手、法师等远程输出</li>
+                                <li><strong>快速突进：</strong>野猪骑士、王子等快速单位配合小兵进行快速攻击</li>
+                                <li><strong>空中优势：</strong>飞龙、气球兵等空中单位避开地面防御</li>
+                                <li><strong>法术配合：</strong>火球、雷电等法术清理敌方单位或直接攻击塔</li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">⚡ 时机把握技巧</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>圣水管理：</strong>合理分配圣水，避免一次性消耗过多</li>
+                                <li><strong>反击时机：</strong>在敌方攻击后利用圣水优势进行反击</li>
+                                <li><strong>双倍圣水：</strong>最后1分钟双倍圣水期间是翻盘的关键时刻</li>
+                                <li><strong>塔血优势：</strong>保持塔血优势，在关键时刻进行防守</li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">🛡️ 防守策略</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>建筑放置：</strong>合理放置防御建筑吸引敌方单位</li>
+                                <li><strong>单位克制：</strong>利用单位间的克制关系进行防守</li>
+                                <li><strong>法术防守：</strong>使用法术清理敌方单位群</li>
+                                <li><strong>国王塔激活：</strong>在适当时机激活国王塔获得额外火力</li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">🎮 高级技巧</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>预判放置：</strong>根据敌方卡牌预判其下一步行动</li>
+                                <li><strong>拉扯技巧：</strong>利用单位移动路径进行拉扯</li>
+                                <li><strong>分路攻击：</strong>同时攻击两路分散敌方防守</li>
+                                <li><strong>心理战术：</strong>通过表情和节奏影响对手心理</li>
+                            </ul>
+                            
+                            <h4 class="text-lg font-semibold text-gray-800 mt-6 mb-3">📈 段位提升建议</h4>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li><strong>专注一套卡组：</strong>熟练掌握一套卡组比频繁更换更有效</li>
+                                <li><strong>观看高手对战：</strong>学习顶级玩家的操作和思路</li>
+                                <li><strong>记录分析：</strong>记录自己的对战，分析失误和优势</li>
+                                <li><strong>保持心态：</strong>输赢是常事，保持良好心态才能持续进步</li>
+                            </ul>
+                            
+                            <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mt-6">
+                                <p class="text-blue-800"><strong>💡 小贴士：</strong>皇室战争是一个需要不断练习和思考的游戏。每个玩家都有自己的风格，找到适合自己的卡组和策略才是最重要的。记住，享受游戏过程比单纯追求胜利更有意义！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.remove();
+                }
+            });
+        }
+
         function showEventContent() {
             const modal = document.createElement('div');
             modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4';
@@ -563,7 +692,7 @@
                     <div class="p-6 border-b border-gray-200">
                         <div class="flex justify-between items-start">
                             <div>
-                                <span class="category-badge category-Events mb-2 inline-block">Events</span>
+                                <span class="category-badge category-Events mb-2 inline-block">活动</span>
                                 <h2 class="text-2xl font-bold text-gray-900">Daily Challenge: Master the Wood Block Jam</h2>
                                 <p class="text-gray-500 mt-2">September 14, 2025</p>
                             </div>
