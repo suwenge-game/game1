@@ -33,6 +33,10 @@ Allow: /
 User-agent: YandexBot
 Allow: /
 
+# Allow specific pages
+Allow: /news.html
+Allow: /index.html
+
 # Disallow admin pages
 Disallow: /admin.html
 
