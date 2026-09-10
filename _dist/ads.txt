@@ -1,2 +1,0 @@
-# ads.txt for deskgame.xyz
-google.com, pub-9132117639313977, DIRECT, f08c47fec0942fa0
