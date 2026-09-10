@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <title>Play 2048 Online - Free Number Puzzle Game | DeskGame.xyz</title>
+    <meta name="description" content="Play 2048 online free. Merge matching tiles, reach 2048 and beyond. Three board sizes (3x3, 4x4, 5x5), keyboard and touch controls, no download.">
+    <meta name="author" content="DeskGame.xyz">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://deskgame.xyz/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Play 2048 Online - Free Number Puzzle Game">
+    <meta property="og:description" content="Merge matching tiles, reach 2048 and beyond. Three board sizes, keyboard and touch controls, no download.">
+    <meta property="og:url" content="https://deskgame.xyz/">
+    <meta property="og:site_name" content="DeskGame.xyz">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Play 2048 Online - Free Number Puzzle Game">
+    <meta name="twitter:description" content="Merge matching tiles, reach 2048 and beyond. Three board sizes, keyboard and touch controls, no download.">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- 2048 game CSS -->
+    <link rel="stylesheet" href="2048.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"2048","description":"A single-player number puzzle where you slide tiles on a grid and merge matching numbers to reach 2048.","genre":"Puzzle","gamePlatform":["PC","Mobile","Tablet"],"operatingSystem":["Windows","macOS","iOS","Android"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"publisher":{"@type":"Organization","name":"DeskGame.xyz"},"url":"https://deskgame.xyz/","inLanguage":"en-US","isAccessibleForFree":true,"playMode":"SinglePlayer"}</script>
+
+    <!-- Additional Structured Data for Website -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"DeskGame.xyz","url":"https://deskgame.xyz/","description":"Free online puzzle games including 2048","publisher":{"@type":"Organization","name":"DeskGame.xyz","logo":{"@type":"ImageObject","url":"https://deskgame.xyz/logo-512.png"}}}</script>
+
+    <!-- Google tag (gtag.js) -->
+    <script src="/consent.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K11J4PCW59"></script>
+<script>gtag('config', 'G-K11J4PCW59');</script>
+
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-semibold text-gray-900 hover:text-blue-600">DeskGame.xyz</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#game" class="text-blue-600 hover:text-blue-800 px-3 py-2 rounded-md text-sm font-medium">Play Game</a>
+                        <a href="/news.html" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Latest Guides</a>
+                        <a href="#how-to-play" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">How to Play</a>
+                        <a href="#features" class="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+                Play 2048 Online
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Slide tiles, merge matching numbers, and reach 2048. Free to play in your browser on any device.
+            </p>
+            <a href="#game" class="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 transition-colors duration-200 shadow-lg hover:shadow-xl">
+                Play Now - It's Free!
+            </a>
+        </div>
+    </section>
+
+    <!-- Game Section -->
+    <section id="game" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Play 2048</h2>
+                <p class="text-lg text-gray-600">Use arrow keys / WASD, or swipe on touch screens</p>
+            </div>
+
+            <!-- Game Container -->
+            <div class="relative bg-white rounded-2xl shadow-2xl p-6 sm:p-10">
+                <div data-dg2048 role="region" aria-label="2048 puzzle game"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Play Section -->
+    <section id="how-to-play" class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">How to Play 2048</h2>
+                <p class="text-lg text-gray-600">Simple rules, deep strategy</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Basic Gameplay</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">1</span>
+                            Slide the whole board in one direction with each move
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">2</span>
+                            Tiles with the same number merge into their sum when they collide
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">3</span>
+                            A new tile (2 or 4) appears after every move
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">4</span>
+                            Reach 2048 to win; keep playing for a higher score
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg">
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Controls &amp; Gameplay</h3>
+                    <ul class="space-y-3 text-gray-600">
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">•</span>
+                            <strong>Desktop:</strong> Arrow keys or WASD to move
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">•</span>
+                            <strong>Mobile:</strong> Swipe in any direction
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">•</span>
+                            <strong>Boards:</strong> 3×3 Sprint, 4×4 Classic, 5×5 Expert
+                        </li>
+                        <li class="flex items-start">
+                            <span class="flex-shrink-0 w-6 h-6 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-sm font-medium mr-3">•</span>
+                            <strong>Score:</strong> Merges add points; your best score is saved automatically
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Game Features</h2>
+                <p class="text-lg text-gray-600">Why players keep coming back</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Three Board Sizes</h3>
+                    <p class="text-gray-600">3×3 for quick sprints, 4×4 for the classic challenge, 5×5 for experts</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Brain Workout</h3>
+                    <p class="text-gray-600">Plan ahead, keep your biggest tile in a corner, and watch the board fill up</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Relaxing Yet Addictive</h3>
+                    <p class="text-gray-600">One more move is always tempting. Easy to learn, hard to put down</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platform Support Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Play on Any Device</h2>
+                <p class="text-lg text-gray-600">2048 works seamlessly across all your devices</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">PC &amp; Chromebook</h3>
+                    <p class="text-gray-600">Play with arrow keys or WASD for precise control</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Mobile Devices</h3>
+                    <p class="text-gray-600">Swipe controls optimized for smartphones and tablets</p>
+                </div>
+
+                <div class="bg-white rounded-xl p-6 shadow-lg text-center">
+                    <div class="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Cross-Platform</h3>
+                    <p class="text-gray-600">Seamless experience across all devices and browsers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About the Game Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">About the Game</h2>
+                <p class="text-lg text-gray-600">Learn more about this 2048 game</p>
+            </div>
+
+            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-8">
+                <div class="max-w-3xl mx-auto text-center">
+                    <p class="text-lg text-gray-700 mb-6">
+                        <strong>2048</strong> is a number puzzle where each move slides every tile in one direction. Tiles with the same value merge into their sum, and a new tile appears after each move. Reach the 2048 tile to win, or keep going to push your score higher.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6">
+                        This version is built and maintained by DeskGame.xyz. It runs entirely in your browser with no account, no download, and no third-party embed — your best score is saved on your own device.
+                    </p>
+                    <div class="bg-white rounded-lg p-6 shadow-sm">
+                        <p class="text-sm text-gray-600">
+                            <strong>Developer:</strong> DeskGame.xyz<br>
+                            <strong>Genre:</strong> Puzzle, Strategy<br>
+                            <strong>Platform:</strong> Web Browser (PC, Mobile, Tablet)<br>
+                            <strong>Price:</strong> Free to Play
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- dense-content v1 -->
+<h2>Putting this into practice</h2><p>Knowledge from this page converts to skill through one specific drill, and the drill is named in the guide you just read. Run it today — the interval between learning and doing is where most strategy evaporates. If the drill needs a specific board state, the daily challenge's fixed seed gives you a reproducible board: replay it until the drill decision becomes automatic.</p><p>Track one number for the week after reading: the guide's detection signal (press counts, merge rate, dead-move clusters). Numbers convert vague self-assessment into a trend line, and the trend line tells you whether the guide actually moved your play. Ten games is the minimum sample — single games are noise, as the probability page explains.</p><p>Pair reading with the opposite input mode from your usual one. The friction of an unfamiliar input slows your swipes to the speed of your new knowledge, which is exactly the tempo learning needs. Once the guide's signal is visible in slow play, return to your main input and the improvement carries over.</p><h2>When the advice conflicts</h2><p>This site's guides occasionally overlap, and where they seem to conflict there is always a priority rule: board-state signals override structural habits, and structural habits override statistical averages. Corner strategy (structural) beats merge-rate optimization (statistical) in the early game; the order reverses past 2048 where every structure is mature and the economy is what remains.</p><p>When this site disagrees with advice you have read elsewhere, the disagreement is usually scope: our figures are computed from this site's actual answer bank and this implementation's spawn rules. Advice written for the original game's tuning may not transfer exactly — where it matters, the pages name the assumption. When in doubt, trust the page that shows its numbers and shows when they were computed.</p>
+</main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">DeskGame.xyz</h3>
+                    <p class="text-gray-400">
+                        Your destination for free online puzzle games. Play 2048 and discover more exciting brain-teasing adventures.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#game" class="hover:text-white transition-colors">Play Game</a></li>
+                        <li><a href="/news.html" class="hover:text-white transition-colors">Latest Guides</a></li>
+                        <li><a href="/strategy-advanced.html" class="hover:text-white transition-colors">Advanced Strategy</a></li>
+                        <li><a href="#how-to-play" class="hover:text-white transition-colors">How to Play</a></li>
+                        <li><a href="#features" class="hover:text-white transition-colors">Features</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Game Info</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="/about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/contact.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/privacy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms.html" class="hover:text-white transition-colors">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2026 DeskGame.xyz. 2048 is a self-developed puzzle game by DeskGame.xyz.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Smooth scrolling script -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    <!-- 2048 game -->
+    <script src="2048.js"></script>
+</body>
+</html>

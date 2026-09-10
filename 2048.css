@@ -1,0 +1,226 @@
+/* DeskGame 2048 — self-developed game UI */
+
+.dg2048-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.dg2048-scores {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.dg2048-score {
+  background: #0f172a;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.9rem;
+  text-align: center;
+  min-width: 5.2rem;
+}
+
+.dg2048-label {
+  display: block;
+  color: #94a3b8;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.dg2048-value {
+  display: block;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.3;
+}
+
+.dg2048-controls {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.dg2048-size {
+  padding: 0.5rem 0.6rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dg2048-new {
+  padding: 0.55rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #2563eb;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.dg2048-new:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.dg2048-board-wrap {
+  position: relative;
+}
+
+.dg2048-board {
+  display: grid;
+  gap: 0.55rem;
+  background: #b6c2d9;
+  border-radius: 0.85rem;
+  padding: 0.55rem;
+  max-width: 420px;
+  margin: 0 auto;
+  box-shadow: inset 0 2px 6px rgba(15, 23, 42, 0.12);
+}
+
+.dg2048-board.dg2048-size-3 {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 320px;
+}
+
+.dg2048-board.dg2048-size-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.dg2048-board.dg2048-size-5 {
+  grid-template-columns: repeat(5, 1fr);
+  max-width: 460px;
+}
+
+.dg2048-tile {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.55rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  background: #cdd5e3;
+  color: #475569;
+  font-size: clamp(1.3rem, 6vw, 1.9rem);
+  transition: background 0.12s ease;
+  user-select: none;
+}
+
+/* Tile color ramp (light → dark as value grows) */
+.dg2048-tile.dg2048-v0 { background: #cdd5e3; }
+.dg2048-tile.dg2048-v2 { background: #eaf2fb; color: #1e3a5f; }
+.dg2048-tile.dg2048-v4 { background: #d8e9f8; color: #1e3a5f; }
+.dg2048-tile.dg2048-v8 { background: #b3d4ef; color: #1e3a5f; }
+.dg2048-tile.dg2048-v16 { background: #7fb3e0; color: #fff; }
+.dg2048-tile.dg2048-v32 { background: #5492ce; color: #fff; }
+.dg2048-tile.dg2048-v64 { background: #3a74b8; color: #fff; }
+.dg2048-tile.dg2048-v128 { background: #2b5ea0; color: #fff; }
+.dg2048-tile.dg2048-v256 { background: #234d87; color: #fff; }
+.dg2048-tile.dg2048-v512 { background: #1b3f71; color: #fff; }
+.dg2048-tile.dg2048-v1024 { background: #14325b; color: #fff; }
+.dg2048-tile.dg2048-v2048 { background: #f59e0b; color: #fff; }
+.dg2048-tile.dg2048-v4096 { background: #d97706; color: #fff; }
+.dg2048-tile.dg2048-v8192 { background: #b45309; color: #fff; }
+
+/* Overlay for win / game over */
+.dg2048-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(248, 250, 252, 0.78);
+  border-radius: 0.85rem;
+  z-index: 5;
+  backdrop-filter: blur(3px);
+}
+
+.dg2048-overlay[hidden] {
+  display: none;
+}
+
+.dg2048-overlay-card {
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.75rem 2rem;
+  max-width: 20rem;
+  width: 88%;
+  box-shadow: 0 20px 40px -20px rgba(15, 23, 42, 0.35);
+}
+
+.dg2048-overlay-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.dg2048-overlay-text {
+  margin: 0 0 1.25rem;
+  color: #64748b;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.dg2048-overlay-actions {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+}
+
+.dg2048-overlay-actions button {
+  padding: 0.55rem 1.1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.dg2048-continue {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.dg2048-continue:hover {
+  background: #e2e8f0;
+}
+
+.dg2048-again {
+  background: #2563eb;
+  color: #fff;
+}
+
+.dg2048-again:hover {
+  background: #1d4ed8;
+}
+
+.dg2048-hint {
+  margin: 0.9rem 0 0;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 480px) {
+  .dg2048-board { gap: 0.35rem; padding: 0.35rem; border-radius: 0.6rem; }
+  .dg2048-tile { border-radius: 0.4rem; }
+  .dg2048-head { gap: 0.6rem; }
+}
