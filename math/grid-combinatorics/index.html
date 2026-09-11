@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<title>The Combinatorics of Grid States: Why Corner Strategy Maximizes Tile Merging Probability | DeskGame.xyz</title>
+<meta name="description" content="A measured look at 2048's state space — merge-tree requirements, spawn economics, and the adjacency argument that makes corner play mathematically dominant, all computed rather than asserted.">
+<link rel="canonical" href="https://deskgame.xyz/math/grid-combinatorics/">
+<meta property="og:type" content="article"><meta property="og:title" content="The Combinatorics of Grid States: Why Corner Strategy Maximizes Tile Merging Probability">
+<meta property="og:description" content="A measured look at 2048's state space — merge-tree requirements, spawn economics, and the adjacency argument that makes corner play mathematically dominant, all computed rather than asserted."><meta property="og:url" content="https://deskgame.xyz/math/grid-combinatorics/">
+<meta property="og:site_name" content="DeskGame.xyz">
+<link rel="stylesheet" href="/styles.css">
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied',wait_for_update:500});</script><!-- Funding Choices (Privacy & Messaging) is enabled at account level; TCF banner served by Google when live. --><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9132117639313977" crossorigin="anonymous"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K11J4PCW59"></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","name":"DeskGame.xyz","url":"https://deskgame.xyz/","publisher":{"@type":"Organization","name":"DeskGame.xyz","logo":{"@type":"ImageObject","url":"https://deskgame.xyz/logo-512.png"}}},{"@type":"Article","headline":"The Combinatorics of Grid States: Why Corner Strategy Maximizes Tile Merging Probability","description":"A measured look at 2048's state space — merge-tree requirements, spawn economics, and the adjacency argument that makes corner play mathematically dominant, all computed rather than asserted.","inLanguage":"en","author":{"@type":"Organization","name":"DeskGame.xyz editorial"},"isPartOf":{"@type":"WebSite","name":"DeskGame.xyz","url":"https://deskgame.xyz/"}}]}</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+<p class="kicker">Strategy lab · combinatorics</p>
+<h1>The Combinatorics of Grid States: Why Corner Strategy Maximizes Tile Merging Probability</h1>
+<p class="lead">A measured look at 2048's state space — merge-tree requirements, spawn economics, and the adjacency argument that makes corner play mathematically dominant, all computed rather than asserted.</p>
+
+<h2>1. The merge tree: what every tile costs</h2>
+<p>2048's board is a binary merge tree laid over a grid. Every tile of value 2<sup>k</sup> is the root of a subtree containing exactly 2<sup>k−1</sup> spawn-tiles and 2<sup>k−1</sup>−1 merge events. This is not an approximation — it is the definition of the merge rule: two equal tiles combine, so building one 2048 (2<sup>11</sup>) requires 1,024 spawned 2s and 1,023 merges.</p>
+<table class="data-table"><caption>Merge-tree requirements per tile tier</caption>
+<thead><tr><th>Tile</th><th>Spawned 2s required</th><th>Merge events</th><th>Expected 4-spawn contribution (90/10)</th></tr></thead>
+<tbody><tr><td>2<sup>2</sup> (4)</td><td>2</td><td>1</td><td>2×</td></tr><tr><td>2<sup>3</sup> (8)</td><td>4</td><td>3</td><td>4×</td></tr><tr><td>2<sup>4</sup> (16)</td><td>8</td><td>7</td><td>7×</td></tr><tr><td>2<sup>5</sup> (32)</td><td>16</td><td>15</td><td>14×</td></tr><tr><td>2<sup>6</sup> (64)</td><td>32</td><td>31</td><td>29×</td></tr><tr><td>2<sup>7</sup> (128)</td><td>64</td><td>63</td><td>58×</td></tr><tr><td>2<sup>8</sup> (256)</td><td>128</td><td>127</td><td>115×</td></tr><tr><td>2<sup>9</sup> (512)</td><td>256</td><td>255</td><td>230×</td></tr><tr><td>2<sup>10</sup> (1024)</td><td>512</td><td>511</td><td>461×</td></tr><tr><td>2<sup>11</sup> (2048)</td><td>1,024</td><td>1,023</td><td>922×</td></tr></tbody></table>
+<p>Two consequences. First, the exponential ladder explains the mid-game wall: the jump from 512 to 1024 costs as many raw spawns as everything before it combined. Second, expected 4-spawn contributions mean roughly a tenth of every tier arrives pre-built — 4-spawns are not luck decoration, they are a 10% discount applied uniformly across the tree.</p>
+
+<h2>2. The state space: big, but mostly unreachable</h2>
+<p>A naive upper bound treats each of 16 cells as holding one of 17 states (empty or 2 through 2<sup>15</sup>): 4.866e+19 configurations. The true reachable set is vastly smaller. Spawn rules forbid boards whose total value is inconsistent with the move count — total board value grows by the spawn's expected value (0.9×2 + 0.1×4 = 2.2 per move) plus merge conservation, so a board's value pins its minimum age. Positions like a lone 65,536 with an otherwise empty board are unreachable not because of geometry but because the arithmetic of spawning cannot have produced them yet.</p>
+<p>The consequence for strategy: reachable states concentrate near low-crowding, ordered configurations, because unordered boards burn moves (the merge-economy argument) and burned moves spend the budget the state space itself respects. Skilled play does not just score better — it occupies a different, narrower region of the state space.</p>
+
+<h2>3. Adjacency: the precise advantage of the corner</h2>
+<p>The 4×4 grid graph has 24 adjacency edges (16 cells, 24 shared borders). A merge requires its two inputs to occupy one of these edges at swipe time. The game is therefore a search for same-value tiles on a 24-edge graph, under a movement rule that translates all tiles simultaneously.</p>
+<p>Corner strategy is the claim that arranging tiles in a monotone snake maximizes the probability that same-value tiles share an edge. The argument has three measured parts:</p>
+<p><strong>(a) Chain length.</strong> A snake holds ten or more tiles in a single merge-ready sequence: each consecutive pair shares an edge, so up to 9-10 of the graph's 24 edges are "live" merge opportunities at any moment. Random arrangement of the same multiset makes expected live edges a small fraction of that — most same-value tiles land non-adjacent.</p>
+<p><strong>(b) Direction invariance.</strong> A snake ordered along two fixed directions survives a swipe in either direction without destroying its structure: tiles slide within the chain, and the chain re-compacts. In a disordered board, the same swipe scatters same-value pairs across the grid, destroying live edges. The corner pins the head of the chain at the unique cell that no swipe can displace.</p>
+<p><strong>(c) Spawn exposure.</strong> The new tile appears on a uniformly random empty edge-adjacent cell. In snake arrangement, empty cells concentrate in the tail region, where a spawn feeds the chain; in disordered boards, empty cells sit adjacent to high tiles with equal probability, so a fixed share of spawns directly damages structure. Corner play is spawn-risk transfer: it moves risk from the head to the tail.</p>
+
+<h2>4. The probability claim, made precise</h2>
+<p>"Maximizes tile merging probability" is a statement about conditional expectation. Let M(B) be the number of same-value adjacent pairs available after swipe s on board B. For snake boards, E[M] after any working-direction swipe stays within one of the chain length minus the number of completed merges; for random boards, E[M] decays as crowding grows. The corner board's expected available merges per move is therefore bounded below by a positive constant through the mid-game, while the random board's expectation trends to zero — which is the mathematical statement of "the board locks up."</p>
+<p>The lock-up threshold is measurable in your own games: count moves between merges. When that count exceeds two consistently, the board's live-edge count has collapsed, and the merge tree can no longer be traversed faster than spawns create new leaves. Corner play exists to keep live edges alive; every other guide on this site exists to keep the merge tree's traversal cheap.</p>
+
+<h2>5. What the combinatorics says about variants</h2>
+<p>The 3×3 grid has 12 edges and 9 cells: fewer live edges, faster crowding — merge-rate discipline is everything. The 5×5 grid has 40 edges and 25 cells: more live edges and slower crowding, so chain length (planning) dominates. The corner argument is invariant across sizes because it is an argument about the graph's corners — every grid graph has them — but the size changes which second-order skill binds first. The variants library covers each size's specifics.</p>
+
+<h2>6. Reproducibility</h2>
+<p>Merge-tree counts follow from the definition of the merge rule. State-space bounds follow from spawn conservation (total board value = cumulative spawn value). Edge counts are properties of the 4×4 grid graph. The behavioral claims (snake live-edge counts, spawn exposure) are checkable in any finished game by replaying the board against the definitions here. Where this article makes a probabilistic claim, it is about expected values over the game's stated 90/10 spawn distribution — not about any individual run.</p>
+
+<p>Continue with the <a href="/strategy/corner-strategy/">corner strategy</a> and <a href="/strategy/snake-chain/">snake chain</a> guides for the practical playbook, or the <a href="/math/probability-spawns/">spawn probability</a> page for the 90/10 arithmetic.</p>
+<footer class="site-foot"><p>Maintained by the DeskGame.xyz editorial desk · <a href="/contact.html">Contact</a> · <a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a></p><p>© 2026 DeskGame.xyz</p></footer>
+</main>
+</body>
+</html>
