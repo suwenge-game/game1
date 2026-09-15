@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://deskgame.xyz/</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://deskgame.xyz/about.html</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://deskgame.xyz/contact.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://deskgame.xyz/about</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://deskgame.xyz/contact</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/faq/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/faq/faq-basics/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/faq/faq-controls/</loc><lastmod>2026-09-11</lastmod></url>
@@ -14,9 +14,9 @@
   <url><loc>https://deskgame.xyz/math/monotonicity/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/math/powers-of-two/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/math/probability-spawns/</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://deskgame.xyz/news.html</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://deskgame.xyz/privacy.html</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://deskgame.xyz/strategy-advanced.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://deskgame.xyz/news</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://deskgame.xyz/privacy</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://deskgame.xyz/strategy-advanced</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/strategy/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/strategy/common-mistakes-2048/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/strategy/corner-strategy/</loc><lastmod>2026-09-11</lastmod></url>
@@ -27,7 +27,7 @@
   <url><loc>https://deskgame.xyz/strategy/snake-chain/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/strategy/spawn-management/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/strategy/swipe-discipline/</loc><lastmod>2026-09-11</lastmod></url>
-  <url><loc>https://deskgame.xyz/terms.html</loc><lastmod>2026-09-11</lastmod></url>
+  <url><loc>https://deskgame.xyz/terms</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/variants/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/variants/classic-4x4/</loc><lastmod>2026-09-11</lastmod></url>
   <url><loc>https://deskgame.xyz/variants/large-5x5-mode/</loc><lastmod>2026-09-11</lastmod></url>
